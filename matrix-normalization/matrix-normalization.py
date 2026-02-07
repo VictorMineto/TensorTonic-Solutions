@@ -24,7 +24,7 @@ def matrix_normalization(matrix, axis=None, norm_type='l2'):
         norms = np.sqrt(np.sum(X * X, axis=axis, keepdims=True))
     elif nt == "l1":
         norms = np.sum(absX, axis=axis, keepdims=True)
-    else:  # "max"
+    else:
         norms = np.max(absX, axis=axis, keepdims=True)
 
     norms_safe = np.where(norms == 0.0, 1.0, norms)
